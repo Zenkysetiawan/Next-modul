@@ -1,15 +1,12 @@
-const students = [
-  { id: 1, name: "Budi", major: "Hukum" },
-  { id: 2, name: "Sari", major: "Sastra" },
-  { id: 3, name: "Andi", major: "Informatika" },
-];
+import Link from "next/link";
+import { students } from "@/data/students";
 
 export default function StudentsPage() {
   return (
     <ul>
       {students.map((student) => (
         <li key={student.id}>
-          {student.name} - {student.major}
+          <Link href={`/students/${student.id}`}>{student.name}</Link>
         </li>
       ))}
     </ul>
