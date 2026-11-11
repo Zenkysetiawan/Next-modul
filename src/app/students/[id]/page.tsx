@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { students } from "@/data/students";
+import LikeButton from "@/components/LikeButton";
 
 export default async function StudentDetailPage({
   params,
@@ -20,6 +21,7 @@ export default async function StudentDetailPage({
       <h3>{student.name}</h3>
       <p>Jurusan: {student.major}</p>
       <p>Semester: {student.semester}</p>
+      <LikeButton />
     </div>
   );
 }
